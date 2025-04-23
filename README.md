@@ -1,10 +1,10 @@
-# 🔐 Python Asymmetric Encryption Tool
+# Python Asymmetric Encryption Tool
 
 A Python-based command-line tool for performing asymmetric encryption and digital signing using **RSA**, **Ed25519**, and **X25519** algorithms.
 
 ---
 
-## 📌 Introduction
+## Introduction
 
 This tool supports secure operations including:
 - Key generation
@@ -15,13 +15,13 @@ All features are accessible via a simple command-line interface (CLI), making it
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
-### 🧱 Paradigm
+### Paradigm
 
 The tool uses **Object-Oriented Programming (OOP)** to structure the logic into modular and maintainable components.
 
-### 🔑 KeyManager Class
+### KeyManager Class
 
 Main class handling all cryptographic operations:
 
@@ -34,7 +34,7 @@ Main class handling all cryptographic operations:
 def __init__(self, algorithm, generate_keypair=False)
 
 Initializes the class with selected algorithm and optionally generates keys.
-🔧 KeyManager Methods
+ KeyManager Methods
 
     encrypt_file_with_public_key_RSA(...)
 
@@ -64,20 +64,20 @@ Initializes the class with selected algorithm and optionally generates keys.
 
     load_x25519_private_key(...) / load_x25519_public_key(...)
 ```
-💻 Command Line Interface (CLI)
+ Command Line Interface (CLI)
 
 A class-based CLI is implemented using argparse, supporting:
 - Encryption & decryption
 - Key generation
 - Signing & verification
 
-📦 External Libraries
+ External Libraries
 The only external dependency is:
 ```
 pip install cryptography
 ```
-▶️ Usage Examples
-🔐 RSA
+ Usage Examples
+ RSA
 ```
 # Generate RSA Key Pair
 python Encryption.py --algorithm RSA --keypair
@@ -95,7 +95,7 @@ python Encryption.py --sign_file_RSA private_key_RSA.pem input.txt signature.sig
 python Encryption.py --verify --public_key public_key_RSA.pem --file input.txt --signature signature.sig
 
 ```
-✍️ Ed25519
+Ed25519
 ```
 # Generate Keys
 python Encryption.py --algorithm Ed25519 --keypair
@@ -111,7 +111,7 @@ python Encryption.py --simulate_sign_ed25519 public_key_Ed.pem input.txt fake.si
 python Encryption.py --simulate_verify_ed25519 public_key_Ed.pem input.txt fake.sig
 
 ```
-🖼️ Encrypt & Decrypt Image (X25519)
+Encrypt & Decrypt Image (X25519)
 ```
 # Generate X25519 Keys
 python Encryption.py --generate_x25519_keys private_x25519.pem public_x25519.pem
@@ -123,7 +123,7 @@ python Encryption.py --encrypt_file_X25519 private_x25519.pem public_x25519.pem 
 python Encryption.py --decrypt_file_X25519 private_x25519.pem public_x25519.pem image.jpg.enc
 
 ```
-🔑 PEM Key Format
+PEM Key Format
 Ed25519
 - private_key_Ed25519.pem: Used for signing
 - public_key_Ed25519.pem: Used for verifying signatures
@@ -131,7 +131,7 @@ Ed25519
 RSA
 - private_key_RSA.pem: Used for decryption & signing
 - public_key_RSA.pem: Used for encryption & verifying signatures
-🧪 Signature Examples
+Signature Examples
 RSA Signature
 ```
 python Encryption.py --sign_file_RSA private_key_RSA.pem report.pdf report_signature.sig
@@ -140,7 +140,7 @@ Ed25519 Signature
 ```
 python Encryption.py --sign_file_ed25519 private_key_Ed.pem report.pdf report_signature.sig
 ```
-✅ Conclusion
+Conclusion
 This tool provides robust cryptographic functionality using modern best practices:
     RSA for encryption and signing
     Ed25519 for lightweight digital signatures
